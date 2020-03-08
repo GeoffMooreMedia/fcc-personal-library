@@ -19,6 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //fake powered by header
 app.use(helmet.hidePoweredBy({setTo: 'PHP 4.2.0' }));
+//prevent caching
+app.use(helmet.noCache());
 
 //Index page (static HTML)
 app.route('/')
